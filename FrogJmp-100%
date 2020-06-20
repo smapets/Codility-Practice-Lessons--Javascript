@@ -1,0 +1,15 @@
+function solution(X, Y, D) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  const checkXInt=Number.isInteger(X);
+  const checkYInt=Number.isInteger(Y);
+  const checkDInt=Number.isInteger(D);
+  if(checkXInt&&checkYInt&&checkDInt&&(X<=Y)&&(X<=1000000000)&&(X>=1)&&(Y<=1000000000)&&(Y>=1)&&
+  (D<=1000000000)&&(D>=1)){
+    let dist=Y-X;
+    let minStep=Math.floor(dist/D)
+    if(minStep!==(dist/D)){
+      minStep=minStep+1
+      };
+      return minStep;
+    }
+}
