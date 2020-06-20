@@ -1,0 +1,15 @@
+function solution(X, A) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let arrX=Array.from(Array(X+1).keys());
+  arrX.shift();
+  let index;
+  for(i=0;i<A.length;i++){
+    if(arrX.includes(A[i])){
+      index=arrX.indexOf(A[i]);
+      arrX.splice(index,1);
+      if(arrX.length===0){
+        return i
+      }
+    }
+  }
+}
