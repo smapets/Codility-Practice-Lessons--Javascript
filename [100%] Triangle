@@ -1,0 +1,14 @@
+function solution(A) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let solution=[]
+  for(i=0;i<A.length;i++){
+    if((A[i]+A[i+1]>A[i+2])&&(A[i+1]+A[i+2]>A[i])&&(A[i+2]+A[i]>A[i+1])){
+      solution.push(1)
+    }
+  }
+  if(solution.length>0){
+    return 1
+  }else{
+    return 0
+  }
+}
