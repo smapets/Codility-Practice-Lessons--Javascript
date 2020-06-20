@@ -1,0 +1,17 @@
+function solution(A) {
+// write your code in JavaScript (Node.js 8.9.4)
+  let permArr=Array.from(Array(A.length+1).keys())
+  permArr.shift();
+  let setA=new Set([...A]);
+  let uniqA=Array.from(setA);
+  if(A.length!==uniqA.length){
+    return 0
+  }
+  let sumUniqA=uniqA.reduce((acc,el)=>{return acc+el},0);
+  let sumPermArr=permArr.reduce((acc,el)=>{return acc+el},0);
+  if(sumUniqA===sumPermArr){
+    return 1
+  }else if(sumUniqA!==sumPermArr){
+    return 0
+  }
+}
