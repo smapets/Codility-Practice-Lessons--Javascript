@@ -2,3 +2,5 @@
 Includes the solutions on some of the practice lessons on codility 
 
 Code written in Javascript
+
+Suggestions/improvements are welcome
