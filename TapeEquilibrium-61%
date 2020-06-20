@@ -1,0 +1,22 @@
+function solution(A) {
+// write your code in JavaScript (Node.js 8.9.4)
+  let sumA=A.reduce((acc,el)=>{return acc+el},0)
+  let remainder=0;
+  let diff=Math.abs(sumA-remainder);
+  let minDiff=diff;
+  let jumpShip;
+  if(A.length===2){
+    minDiff=Math.abs(A[0]-A[1]);
+    return minDiff
+  }
+  for(i=0;i<A.length;i++){
+    jumpShip=A.pop()
+    remainder=remainder+jumpShip;
+    sumA=sumA-jumpShip
+    diff=Math.abs(sumA-remainder);
+    if(diff<minDiff){
+      minDiff=diff
+    }
+  }
+  return minDiff
+}
