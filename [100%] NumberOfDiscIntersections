@@ -1,0 +1,28 @@
+function solution(A) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let intersections=0;
+  let openDisks=0;
+  let openPoints=[];
+  let closePoints=[];
+  for (i=0;i<A.length;i++){
+    openPoints.push(i-A[i]);
+    closePoints.push(i+A[i]);
+  }
+  openPoints.sort((a,b)=>{return a-b})
+  closePoints.sort((a,b)=>{return b-a})
+  let compare=closePoints.pop();
+  for(i=0;i<A.length;i++){
+    if(openPoints[i]===undefined){break}
+    if(openPoints[i]<=compare){
+      intersections=intersections+openDisks
+      openDisks++
+    }else{
+      openDisks--
+      compare=closePoints.pop()
+      i=i-1
+    }
+  }
+  if(intersections<=10000000){
+    return intersections
+  }else{return -1}
+}
