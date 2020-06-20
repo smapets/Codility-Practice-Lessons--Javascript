@@ -1,22 +1,22 @@
 function solution(A) {
 // write your code in JavaScript (Node.js 8.9.4)
-if(A.length>1000000||A.length<1){
-return 0
-}
-const nonDuplArr=[...new Set(A)];
-let checkMoreOddOcc=0;
-let result;
-const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc),
-[]);
-for(i=0;i<nonDuplArr.length;i++){
-let indices=indexOfAll(A,nonDuplArr[i]);
-if(indices.length%2===1){
-checkMoreOddOcc++;
-result=nonDuplArr[i];
-}
-}
-if(checkMoreOddOcc>1|| checkMoreOddOcc===0){
-return 0
-}
-return result
+  if(A.length>1000000||A.length<1){
+    return 0
+  }
+  const nonDuplArr=[...new Set(A)];
+  let checkMoreOddOcc=0;
+  let result;
+  const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc),
+  []);
+  for(i=0;i<nonDuplArr.length;i++){
+    let indices=indexOfAll(A,nonDuplArr[i]);
+    if(indices.length%2===1){
+      checkMoreOddOcc++;
+      result=nonDuplArr[i];
+    }
+  }
+  if(checkMoreOddOcc>1|| checkMoreOddOcc===0){
+    return 0
+  }
+  return result
 }
